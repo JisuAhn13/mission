@@ -17,8 +17,10 @@ void car::registerCarBreaksystem(carBreakSystem& breakSystem) {
 void car::registerCarSteeringSystem(carSteeringSystem& steeringSytem){
     this->steeringSystem = steeringSytem;
 }
-
+#if 0
 void car::registerCarRunTest(carRunTest& runTest)
 {
     this->runTest = runTest;
 }
+
+#endif

@@ -1,5 +1,7 @@
 #include "car_runtest.h"
 
+carRunTest* carRunTest::carRun = nullptr;
+
 int carRunTest::isValidCheck(int* stack)
 {
 	if (stack[CarType_Q] == SEDAN && stack[brakeSystem_Q] == CONTINENTAL)

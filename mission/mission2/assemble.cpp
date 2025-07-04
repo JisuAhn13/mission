@@ -12,6 +12,7 @@ int main()
 
 #include "assemble.h"
 
+carRunTest* runTest = carRunTest::getInstance();
 int stack[10];
 int main()
 {
@@ -70,14 +71,14 @@ int processAssembleLine(char  buf[100], car& new_car)
     }
     else if (new_car.assemble_step == Run_Test && answer == 1)
     {
-        new_car.runTest.runProducedCar(stack);
+        runTest->runProducedCar(stack);
         delay(2000);
     }
     else if (new_car.assemble_step == Run_Test && answer == 2)
     {
         printf("Test...\n");
         delay(1500);
-        new_car.runTest.testProducedCar(stack);
+        runTest->testProducedCar(stack);
         delay(2000);
     }
 }
@@ -164,12 +165,12 @@ void registAssemblePart(car& new_car)
     carEngine engine;
     carBreakSystem breakSystem;
     carSteeringSystem steeringSystem;
-    carRunTest runtest;
+//    carRunTest  runtest;
     new_car.registerCarTpye(type);
     new_car.registerCarEngine(engine);
     new_car.registerCarBreaksystem(breakSystem);
     new_car.registerCarSteeringSystem(steeringSystem);
-    new_car.registerCarRunTest(runtest);
+ //   new_car.registerCarRunTest(runtest);
 }
 void getUserInput(char  buf[100])
 {
@@ -204,7 +205,7 @@ void forword_next_assemble_step(car& new_car)
     }
     else if (new_car.assemble_step == Run_Test)
     {
-        new_car.runTest.question_carRunTest();
+        runTest->question_carRunTest();
     }
 }
 
