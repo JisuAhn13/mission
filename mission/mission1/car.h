@@ -6,6 +6,8 @@
 #include "car_engine.h"
 #include "car_breakSystem.h"
 #include "car_steeringSytem.h"
+#include "car_runtest.h"
+
 
 class car {
 public:
@@ -13,11 +15,12 @@ public:
     void registerCarEngine(carEngine& engine);
     void registerCarBreaksystem(carBreakSystem& breakSystem);
     void registerCarSteeringSystem(carSteeringSystem& steeringSytem);
+    void registerCarRunTest(carRunTest& runTest);
 
-    int run;
     int assemble_step;
     carType type;
     carEngine engine;
     carBreakSystem brakeSystem;
     carSteeringSystem steeringSystem;
+    carRunTest runTest;
 };

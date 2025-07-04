@@ -128,6 +128,7 @@
     <ClCompile Include="car_breakSystem.cpp" />
     <ClCompile Include="car_engine.cpp" />
     <ClCompile Include="car_engine.h" />
+    <ClCompile Include="car_runtest.cpp" />
     <ClCompile Include="car_steeringSytem.cpp" />
     <ClCompile Include="car_steeringSytem.h" />
     <ClCompile Include="car_type.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="car.h" />
     <ClInclude Include="car_breakSystem.h" />
     <ClInclude Include="car_assemble_step.h" />
+    <ClInclude Include="car_runtest.h" />
     <ClInclude Include="car_type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
