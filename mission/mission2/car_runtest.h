@@ -12,5 +12,6 @@ public:
     void question_carRunTest();
     void runProducedCar(int* stack);
     void testProducedCar(int* stack);
+    int isValidCheck(int* stack);
 
 };

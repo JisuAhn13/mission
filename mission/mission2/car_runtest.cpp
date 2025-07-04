@@ -1,32 +1,19 @@
 #include "car_runtest.h"
 
-int isValidCheck(int* stack)
+int carRunTest::isValidCheck(int* stack)
 {
 	if (stack[CarType_Q] == SEDAN && stack[brakeSystem_Q] == CONTINENTAL)
-	{
 		return false;
-	}
 	else if (stack[CarType_Q] == SUV && stack[Engine_Q] == TOYOTA)
-	{
 		return false;
-	}
 	else if (stack[CarType_Q] == TRUCK && stack[Engine_Q] == WIA)
-	{
 		return false;
-	}
 	else if (stack[CarType_Q] == TRUCK && stack[brakeSystem_Q] == MANDO)
-	{
 		return false;
-	}
 	else if (stack[brakeSystem_Q] == BOSCH_B && stack[SteeringSystem_Q] != BOSCH_S)
-	{
 		return false;
-	}
 	else
-	{
 		return true;
-	}
-	return true;
 }
 
 void carRunTest::question_carRunTest()
