@@ -15,11 +15,11 @@
 
 int stack[10];
 void delay(int ms);
-void forword_next_assemble_step(car& new_car);
+void forwordNextAssembleStep(car& new_car);
 void getUserInput(char  buf[100]);
 void registAssemblePart(car& new_car);
 int isExit(char  buf[100]);
 int processAssembleLine(char  buf[100], car& new_car);
 int checkUserWantFirstStage(int answer, car& new_car);
 int checkValidRange(char* checkNumber, car& new_car, int answer);
-void startAssembleAccordingToAseembleStep(car& new_car, int answer);
+void startAseembleStep(car& new_car, int answer);

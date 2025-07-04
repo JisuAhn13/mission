@@ -9,7 +9,7 @@ int main()
     registAssemblePart(new_car);
     while (1)
     {
-        forword_next_assemble_step(new_car);
+        forwordNextAssembleStep(new_car);
         getUserInput(buf);
 
         if (isExit(buf)) break;
@@ -24,11 +24,11 @@ int processAssembleLine(char  buf[100], car& new_car)
     int answer = strtol(buf, &checkNumber, 10); // 문자열을 10진수로 변환
     if (checkValidRange(checkNumber, new_car, answer))return 1;
     if (checkUserWantFirstStage(answer, new_car)) return 1;
-    startAssembleAccordingToAseembleStep(new_car, answer);
+    startAseembleStep(new_car, answer);
     return 0;
 }
 
- void startAssembleAccordingToAseembleStep(car& new_car, int answer)
+ void startAseembleStep(car& new_car, int answer)
 {
 
     if (new_car.assemble_step == CarType_Q)
@@ -171,7 +171,7 @@ void getUserInput(char  buf[100])
     strtok_s(buf, "\n", &context);
 }
 
-void forword_next_assemble_step(car& new_car)
+void forwordNextAssembleStep(car& new_car)
 {
     if (new_car.assemble_step == CarType_Q)
     {
