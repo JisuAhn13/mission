@@ -123,11 +123,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="assemble.cpp" />
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="car_breakSystem.cpp" />
+    <ClCompile Include="car_engine.cpp" />
+    <ClCompile Include="car_runtest.cpp" />
+    <ClCompile Include="car_steeringSytem.cpp" />
+    <ClCompile Include="car_type.cpp" />
     <ClCompile Include="m2_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="assemble.h" />
+    <ClInclude Include="car.h" />
+    <ClInclude Include="car_assemble_step.h" />
+    <ClInclude Include="car_breakSystem.h" />
+    <ClInclude Include="car_engine.h" />
+    <ClInclude Include="car_runtest.h" />
+    <ClInclude Include="car_steeringSytem.h" />
+    <ClInclude Include="car_type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

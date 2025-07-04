@@ -1,3 +1,15 @@
+#ifdef _DEBUG
+
+#include "gmock/gmock.h"
+
+int main()
+{
+    testing::InitGoogleMock();
+    return RUN_ALL_TESTS();
+}
+
+#else
+
 #include "assemble.h"
 
 int main()
@@ -209,3 +221,4 @@ void delay(int ms)
         }
     }
 }
+#endif
