@@ -1,12 +1,13 @@
 #include "car_steeringSytem.h"
 
-void carSteeringSystem::selectSteeringSystem(int* stack, int answer)
+int carSteeringSystem::selectSteeringSystem(int* stack, int answer)
 {
     stack[SteeringSystem_Q] = answer;
     if (answer == 1)
         printf("BOSCH 조향장치를 선택하셨습니다.\n");
     if (answer == 2)
         printf("MOBIS 조향장치를 선택하셨습니다.\n");
+    return answer;
 }
 
 void carSteeringSystem::question_carSteeringSystem()

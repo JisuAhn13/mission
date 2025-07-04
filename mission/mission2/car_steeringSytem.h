@@ -11,6 +11,6 @@ enum SteeringSystem
 class carSteeringSystem {
 public:
     carSteeringSystem() = default;
-    void selectSteeringSystem(int* stack, int answer);
+    int selectSteeringSystem(int* stack, int answer);
     void question_carSteeringSystem();
 };

@@ -11,7 +11,7 @@ enum brakeSystem
 class carBreakSystem {
 public:
     carBreakSystem() = default;
-    void selectBreakSystem(int* stack, int answer);
+    int selectBreakSystem(int* stack, int answer);
     void question_carBreakSystem();
 private:
 };

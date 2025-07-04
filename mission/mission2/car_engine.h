@@ -11,6 +11,6 @@ enum Engine
 class carEngine {
 public:
     carEngine() = default;
-    void selectEngine(int* stack, int answer);
+    int selectEngine(int* stack, int answer);
     void question_car_engine();
 };

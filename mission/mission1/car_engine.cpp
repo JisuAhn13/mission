@@ -1,6 +1,6 @@
 #include "car_engine.h"
 
-void carEngine::selectEngine(int* stack, int answer)
+int carEngine::selectEngine(int* stack, int answer)
 {
     stack[Engine_Q] = answer;
     if (answer == 1)
@@ -9,6 +9,7 @@ void carEngine::selectEngine(int* stack, int answer)
         printf("TOYOTA 엔진을 선택하셨습니다.\n");
     if (answer == 3)
         printf("WIA 엔진을 선택하셨습니다.\n");
+    return answer;
 }
 
 void carEngine::question_car_engine()

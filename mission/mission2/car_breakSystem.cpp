@@ -1,6 +1,6 @@
 #include "car_breakSystem.h"
 
-void carBreakSystem::selectBreakSystem(int* stack, int answer)
+int carBreakSystem::selectBreakSystem(int* stack, int answer)
 {
 	stack[brakeSystem_Q] = answer;
 	if (answer == 1)
@@ -9,6 +9,7 @@ void carBreakSystem::selectBreakSystem(int* stack, int answer)
 		printf("CONTINENTAL 제동장치를 선택하셨습니다.\n");
 	if (answer == 3)
 		printf("BOSCH 제동장치를 선택하셨습니다.\n");
+	return answer;
 }
 
 void carBreakSystem::question_carBreakSystem()

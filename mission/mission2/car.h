@@ -11,11 +11,11 @@
 
 class car {
 public:
-    void registerCarTpye(carType& type);
-    void registerCarEngine(carEngine& engine);
-    void registerCarBreaksystem(carBreakSystem& breakSystem);
-    void registerCarSteeringSystem(carSteeringSystem& steeringSytem);
-    void registerCarRunTest(carRunTest& runTest);
+    virtual void registerCarTpye(carType& type);
+    virtual void registerCarEngine(carEngine& engine);
+    virtual void registerCarBreaksystem(carBreakSystem& breakSystem);
+    virtual void registerCarSteeringSystem(carSteeringSystem& steeringSytem);
+    virtual void registerCarRunTest(carRunTest& runTest);
 
     int assemble_step;
     carType type;

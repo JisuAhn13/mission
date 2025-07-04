@@ -2,7 +2,7 @@
 #include "car_breakSystem.h"
 
 
-void carType::selectCarType(int* stack,int answer)
+int carType::selectCarType(int* stack,int answer)
 {
     stack[CarType_Q] = answer;
     if (answer == 1)
@@ -11,6 +11,7 @@ void carType::selectCarType(int* stack,int answer)
         printf("차량 타입으로 SUV을 선택하셨습니다.\n");
     if (answer == 3)
         printf("차량 타입으로 Truck을 선택하셨습니다.\n");
+    return answer;
 }
 
 void carType::question_car_type()

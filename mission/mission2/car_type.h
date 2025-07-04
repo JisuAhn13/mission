@@ -11,7 +11,7 @@ enum CarType
 class carType  {
 public:
     carType() = default;
-    void selectCarType(int* stack, int answer);
+    int selectCarType(int* stack, int answer);
     void question_car_type();
 private:
     int type;
