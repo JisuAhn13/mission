@@ -12,6 +12,7 @@ int main()
 
 #include "assemble.h"
 
+int stack[10];
 int main()
 {
     car new_car;

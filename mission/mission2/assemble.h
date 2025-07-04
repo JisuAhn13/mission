@@ -13,7 +13,6 @@
 
 #define CLEAR_SCREEN "\033[H\033[2J"
 
-int stack[10];
 void delay(int ms);
 void forword_next_assemble_step(car& new_car);
 void getUserInput(char  buf[100]);
