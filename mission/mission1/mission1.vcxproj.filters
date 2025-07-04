@@ -42,6 +42,12 @@
     <ClCompile Include="car.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="car_steeringSytem.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="car_steeringSytem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,7 +62,7 @@
     <ClInclude Include="car.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="car_question.h">
+    <ClInclude Include="car_assemble_step.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="car_breakSystem.h">

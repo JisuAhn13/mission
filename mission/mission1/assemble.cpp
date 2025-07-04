@@ -8,12 +8,12 @@
 #include "car_type.h"
 #include "car_engine.h"
 #include "car_breakSystem.h"
+#include "car_steeringSytem.h"
 
 #define CLEAR_SCREEN "\033[H\033[2J"
 
 int stack[10];
 
-void selectSteeringSystem(int answer);
 void runProducedCar();
 void testProducedCar();
 void delay(int ms);
@@ -46,13 +46,13 @@ enum brakeSystem
     CONTINENTAL,
     BOSCH_B
 };
-#endif
 
 enum SteeringSystem
 {
     BOSCH_S = 1,
     MOBIS
 };
+#endif
 
 void delay(int ms)
 {
@@ -78,9 +78,11 @@ int main()
     carType type;
     carEngine engine;
     carBreakSystem breakSystem;
+    carSteeringSystem steeringSystem;
     new_car.registerCarTpye(type);
     new_car.registerCarEngine(engine);
     new_car.registerCarBreaksystem(breakSystem);
+    new_car.registerCarSteeringSystem(steeringSystem);
     while (1)
     {
         if (new_car.assemble_step == CarType_Q)
@@ -97,11 +99,7 @@ int main()
         }
         else if (new_car.assemble_step == SteeringSystem_Q)
         {
-            printf(CLEAR_SCREEN);
-            printf("어떤 조향장치를 선택할까요?\n");
-            printf("0. 뒤로가기\n");
-            printf("1. BOSCH\n");
-            printf("2. MOBIS\n");
+            new_car.steeringSystem.question_carSteeringSystem();
         }
         else if (new_car.assemble_step == Run_Test)
         {
@@ -209,7 +207,7 @@ int main()
         }
         else if (new_car.assemble_step == SteeringSystem_Q)
         {
-            selectSteeringSystem(answer);
+            new_car.steeringSystem.selectSteeringSystem(stack, answer);
             delay(800);
             new_car.assemble_step = Run_Test;
         }
@@ -249,17 +247,12 @@ void selectEngine(int answer)
         printf("WIA 엔진을 선택하셨습니다.\n");
 }
 
-#endif
 
 void selectSteeringSystem(int answer)
 {
-    stack[SteeringSystem_Q] = answer;
-    if (answer == 1)
-        printf("BOSCH 조향장치를 선택하셨습니다.\n");
-    if (answer == 2)
-        printf("MOBIS 조향장치를 선택하셨습니다.\n");
 }
 
+#endif
 int isValidCheck()
 {
     if (stack[CarType_Q] == SEDAN && stack[brakeSystem_Q] == CONTINENTAL)
