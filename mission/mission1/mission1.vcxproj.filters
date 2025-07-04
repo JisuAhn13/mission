@@ -30,6 +30,18 @@
     <ClCompile Include="car_type.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="car_engine.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="car_engine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="car_breakSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="car.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -45,6 +57,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="car_question.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="car_breakSystem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

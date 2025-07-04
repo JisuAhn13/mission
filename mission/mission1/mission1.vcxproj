@@ -124,6 +124,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="assemble.cpp" />
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="car_breakSystem.cpp" />
+    <ClCompile Include="car_engine.cpp" />
+    <ClCompile Include="car_engine.h" />
     <ClCompile Include="car_type.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="assemble.h" />
     <ClInclude Include="car.h" />
+    <ClInclude Include="car_breakSystem.h" />
     <ClInclude Include="car_question.h" />
     <ClInclude Include="car_type.h" />
   </ItemGroup>

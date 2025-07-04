@@ -6,13 +6,13 @@
 
 #include "car.h"
 #include "car_type.h"
+#include "car_engine.h"
+#include "car_breakSystem.h"
 
 #define CLEAR_SCREEN "\033[H\033[2J"
 
 int stack[10];
 
-void selectEngine(int answer);
-void selectbrakeSystem(int answer);
 void selectSteeringSystem(int answer);
 void runProducedCar();
 void testProducedCar();
@@ -40,13 +40,13 @@ enum Engine
     WIA
 };
 
-#endif
 enum brakeSystem
 {
     MANDO = 1,
     CONTINENTAL,
     BOSCH_B
 };
+#endif
 
 enum SteeringSystem
 {
@@ -75,32 +75,25 @@ int main()
     char buf[100];
     new_car.assemble_step = CarType_Q;
 
+    carType type;
+    carEngine engine;
+    carBreakSystem breakSystem;
+    new_car.registerCarTpye(type);
+    new_car.registerCarEngine(engine);
+    new_car.registerCarBreaksystem(breakSystem);
     while (1)
     {
         if (new_car.assemble_step == CarType_Q)
         {
-            carType type;
-            new_car.registerCarTpye(type);
             new_car.type.question_car_type();
         }
         else if (new_car.assemble_step == Engine_Q)
         {
-            printf(CLEAR_SCREEN);
-            printf("어떤 엔진을 탑재할까요?\n");
-            printf("0. 뒤로가기\n");
-            printf("1. GM\n");
-            printf("2. TOYOTA\n");
-            printf("3. WIA\n");
-            printf("4. 고장난 엔진\n");
+            new_car.engine.question_car_engine();
         }
         else if (new_car.assemble_step == brakeSystem_Q)
         {
-            printf(CLEAR_SCREEN);
-            printf("어떤 제동장치를 선택할까요?\n");
-            printf("0. 뒤로가기\n");
-            printf("1. MANDO\n");
-            printf("2. CONTINENTAL\n");
-            printf("3. BOSCH\n");
+            new_car.brakeSystem.question_carBreakSystem();
         }
         else if (new_car.assemble_step == SteeringSystem_Q)
         {
@@ -198,19 +191,19 @@ int main()
 
         if (new_car.assemble_step == CarType_Q)
         {
-            new_car.type.selectCarType(stack,answer);
+            new_car.type.selectCarType(stack, answer);
             delay(800);
             new_car.assemble_step = Engine_Q;
         }
         else if (new_car.assemble_step == Engine_Q)
         {
-            selectEngine(answer);
+            new_car.engine.selectEngine(stack, answer);
             delay(800);
             new_car.assemble_step = brakeSystem_Q;
         }
         else if (new_car.assemble_step == brakeSystem_Q)
         {
-            selectbrakeSystem(answer);
+            new_car.brakeSystem.selectBreakSystem(stack, answer);
             delay(800);
             new_car.assemble_step = SteeringSystem_Q;
         }
@@ -245,7 +238,6 @@ void selectCarType(int answer)
     if (answer == 3)
         printf("차량 타입으로 Truck을 선택하셨습니다.\n");
 }
-#endif
 void selectEngine(int answer)
 {
     stack[Engine_Q] = answer;
@@ -257,16 +249,7 @@ void selectEngine(int answer)
         printf("WIA 엔진을 선택하셨습니다.\n");
 }
 
-void selectbrakeSystem(int answer)
-{
-    stack[brakeSystem_Q] = answer;
-    if (answer == 1)
-        printf("MANDO 제동장치를 선택하셨습니다.\n");
-    if (answer == 2)
-        printf("CONTINENTAL 제동장치를 선택하셨습니다.\n");
-    if (answer == 3)
-        printf("BOSCH 제동장치를 선택하셨습니다.\n");
-}
+#endif
 
 void selectSteeringSystem(int answer)
 {

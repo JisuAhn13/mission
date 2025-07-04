@@ -1,4 +1,5 @@
 #include "car_type.h"
+#include "car_breakSystem.h"
 
 
 void carType::selectCarType(int* stack,int answer)
@@ -14,7 +15,7 @@ void carType::selectCarType(int* stack,int answer)
 
 void carType::question_car_type()
 {
-    printf(CLEAR_SCREEN_CAR_TYPE);
+    printf(CLEAR_SCREEN);
 
     printf("        ______________\n");
     printf("       /|            | \n");

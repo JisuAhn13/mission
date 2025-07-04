@@ -1,8 +1,6 @@
 #pragma once
-#include <stdio.h>
 #include "car_question.h"
 
-#define CLEAR_SCREEN_CAR_TYPE "\033[H\033[2J"
 enum CarType
 {
     SEDAN = 1,
